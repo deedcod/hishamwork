@@ -53,6 +53,97 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Arabic Font Support */
+body[lang="ar"] {
+    font-family: 'Tajawal', 'Almarai', 'Segoe UI', Tahoma, sans-serif;
+    direction: rtl;
+}
+
+/* RTL Layout Adjustments */
+[lang="ar"] .sidebar {
+    left: 0;
+    right: auto;
+    border-right: 1px solid var(--border-color);
+    border-left: none;
+    box-shadow: 5px 0px 20px var(--shadow-light);
+}
+
+[lang="ar"] .sidebar.active {
+    left: -300px;
+    right: auto;
+}
+
+[lang="ar"] .main-content {
+    margin-left: 300px;
+    margin-right: 0;
+}
+
+[lang="ar"] .main-content.active {
+    margin-left: 0;
+}
+
+[lang="ar"] .controls-wrapper {
+    left: auto;
+    right: 30px;
+}
+
+[lang="ar"] .menu-toggle {
+    left: 30px;
+    right: auto;
+}
+
+[lang="ar"] .back-to-top {
+    left: auto;
+    right: 30px;
+}
+
+[lang="ar"] .nav-link i {
+    margin-left: 0;
+    margin-right: 10px;
+}
+
+[lang="ar"] .nav-link::before {
+    right: auto;
+    left: 0;
+}
+
+[lang="ar"] .nav-link:hover {
+    transform: translateX(5px);
+}
+
+[lang="ar"] .home-content {
+    padding-right: 0;
+    padding-left: 30px;
+}
+
+[lang="ar"] .secondary-btn {
+    margin-left: 0;
+    margin-right: 15px;
+}
+
+[lang="ar"] .detail-label {
+    margin-left: 0;
+    margin-right: 10px;
+}
+
+[lang="ar"] .info-icon {
+    margin-left: 0;
+    margin-right: 15px;
+}
+
+[lang="ar"] .footer-links a:hover {
+    padding-right: 0;
+    padding-left: 5px;
+}
+
+[lang="ar"] .subscribe-form input {
+    border-radius: 0px 5px 5px 0px;
+}
+
+[lang="ar"] .subscribe-form button {
+    border-radius: 5px 0px 0px 5px;
+}
+
 .container {
     width: 90%;
     max-width: 1200px;
@@ -1475,8 +1566,23 @@ body {
     .sidebar.active {
         right: 0px;
     }
+    
+    [lang="ar"] .sidebar {
+        left: -300px;
+        right: auto;
+    }
+    
+    [lang="ar"] .sidebar.active {
+        left: 0px;
+        right: auto;
+    }
 
     .main-content {
+        margin-right: 0px;
+    }
+    
+    [lang="ar"] .main-content {
+        margin-left: 0px;
         margin-right: 0px;
     }
 
@@ -1487,6 +1593,11 @@ body {
     .home-content {
         padding-right: 0px;
         margin-bottom: 50px;
+    }
+    
+    [lang="ar"] .home-content {
+        padding-left: 0px;
+        padding-right: 0px;
     }
 
     .home-title {
@@ -1504,16 +1615,32 @@ body {
     .achievements-timeline::before {
         left: 30px;
     }
+    
+    [lang="ar"] .achievements-timeline::before {
+        left: auto;
+        right: 30px;
+    }
 
     .timeline-item:nth-child(2n+1) .timeline-content, .timeline-item:nth-child(2n) .timeline-content {
         width: calc(100% - 70px);
         margin-right: 0px;
         margin-left: auto;
     }
+    
+    [lang="ar"] .timeline-item:nth-child(2n+1) .timeline-content, 
+    [lang="ar"] .timeline-item:nth-child(2n) .timeline-content {
+        margin-right: auto;
+        margin-left: 0px;
+    }
 
     .timeline-date {
         left: 30px;
         transform: translateX(0px);
+    }
+    
+    [lang="ar"] .timeline-date {
+        left: auto;
+        right: 30px;
     }
 
     .timeline-item:nth-child(2n+1) .timeline-content::before, .timeline-item:nth-child(2n) .timeline-content::before {
@@ -1521,6 +1648,14 @@ body {
         right: auto;
         border-width: 15px 15px 15px 0px;
         border-color: transparent rgb(255, 255, 255) transparent transparent;
+    }
+    
+    [lang="ar"] .timeline-item:nth-child(2n+1) .timeline-content::before, 
+    [lang="ar"] .timeline-item:nth-child(2n) .timeline-content::before {
+        left: auto;
+        right: -15px;
+        border-width: 15px 0px 15px 15px;
+        border-color: transparent transparent transparent rgb(255, 255, 255);
     }
 }
 
@@ -1557,6 +1692,26 @@ body {
         flex-direction: column;
         gap: 30px;
     }
+    
+    .controls-wrapper {
+        top: 20px;
+        left: 20px;
+    }
+    
+    [lang="ar"] .controls-wrapper {
+        left: auto;
+        right: 20px;
+    }
+    
+    [lang="ar"] .menu-toggle {
+        left: 20px;
+        right: auto;
+    }
+    
+    [lang="ar"] .back-to-top {
+        left: auto;
+        right: 20px;
+    }
 }
 
 @media (max-width: 576px) {
@@ -1572,6 +1727,10 @@ body {
 
     .home-btns .secondary-btn {
         margin-left: 0px;
+    }
+    
+    [lang="ar"] .home-btns .secondary-btn {
+        margin-right: 0px;
     }
 
     .image-frame {
@@ -1594,5 +1753,10 @@ body {
         font-size: 1rem;
         bottom: 20px;
         left: 20px;
+    }
+    
+    [lang="ar"] .back-to-top {
+        left: auto;
+        right: 20px;
     }
 }
